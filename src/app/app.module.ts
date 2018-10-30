@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { HeroesComponent } from './heroes/heroes.component';
     AppComponent,
     PostCreateComponent,
     HeroesComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,

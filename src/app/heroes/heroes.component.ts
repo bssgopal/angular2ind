@@ -9,12 +9,9 @@ import { HEROESLIST } from './mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  hero: Hero = {
-    id: 1,
-    name: 'Gopal'
-  };
+  
 
-  heroes_list = HEROESLIST;
+  heroes_list = ["srinivas","sesha","Gopal"];
   constructor() { }
 
   ngOnInit() {
