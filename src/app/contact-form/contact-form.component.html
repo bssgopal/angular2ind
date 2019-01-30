@@ -1,0 +1,29 @@
+  <h1>My first Angular form</h1>
+  <form #myfirstform = "ngForm" ngSubmit="submitfirst(myfirstform)">
+    <div>
+      <div class="form-group">
+        <label for="firstName" >First Name</label>
+        <input required ngModel id="firstName" name="firstName" #firstName="ngModel" (change)="log(firstName)" class="form-control"/>
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">first name is required</div>
+      </div>
+      <div class="form-group">
+        <label for="comment">Comments</label>
+        <textarea id="comment" name="comment" required class="form-control" ngModel #comment="ngModel"></textarea>
+        <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">Comment is required</div>
+      </div>
+      <div class="form-group">
+        <label for="contactype">Contact type</label>
+        <select class="form-control" ngModel #contactmehthod="ngModel" name='contactmehthod' id='contactmehthod'>
+          <option *ngFor="let contacty of contactMethods" [value]="contacty.id" >{{contacty.value}}</option>
+        </select>
+      </div>
+      <div class="checkbox"><label for="subscribe">subscribe</label><input class='form-control' type='checkbox' ngModel name='subscribe' id='subscribe'  #subscribe="ngModel" /></div>
+      <div class="form-group" *ngFor="let contacty of contactMethods"><label for="radiotype">{{contacty.value}}</label><input class="form-control" type='radio' name="radioinput"  ngModel  #radioinput="ngModel" [value]="contacty.id"/></div>
+      <button class="btn btn-primary" [disabled]="myfirstform.invalid" >Submit</button> 
+    </div>
+    {{myfirstform.value | json}}
+  </form>
+
+  output
+  
+

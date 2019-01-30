@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import {CoursesClickedEventArgs} from './courses/courses.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = ' Tour of Heroes.';
+
+
+  onCoursesClicked(eventArgs : CoursesClickedEventArgs){
+    console.log("clicked on courses component",eventArgs);
+  }
+
+  tweet ={
+    body : '...',
+    likesCount : 10,
+    isLiked : true
+  }
 }

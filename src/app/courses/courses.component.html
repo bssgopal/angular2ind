@@ -12,5 +12,10 @@
 <li *ngFor="let serivce_course  of service_co_list">
   {{ serivce_course }}
 </li>
-
 </ul>
+<button class="btn btn-primary" >Check Styles</button>
+
+<span class="glyphicon glyphicon-star" [class.glyphicon-star]="isstartSelected" [class.glyphicon-star-empty]="!isstartSelected" >Testing span color</span>
+<span>{{is-alias}}</span>
+ngClass
+<span class="glyphicon" [ngClass]="{'glyphicon-star':isstartSelected,'glyphicon-star-empty':!isstartSelected}" >Testing [ngClass] span color</span>

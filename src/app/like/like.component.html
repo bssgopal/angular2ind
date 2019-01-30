@@ -1,0 +1,47 @@
+<br/>
+<h1>LIKE Component</h1>
+
+<span class="glyphicon glyphicon-heart"
+  [class.highlited]="isActive"
+  (click)="onClick()"
+>Heart</span>
+
+<span>{{likescount}}</span>
+
+
+<h1>NgContent</h1>
+<button class="btn btn-primary">Checking bootstrap class</button>
+<div class="panel panel-default">
+  <div class="panel-heaing">
+    <ng-content select=".heading"></ng-content>
+  </div>
+  <div class="panel body">
+    <ng-content select=".body"></ng-content>
+  </div>
+</div>
+
+<h1>Directives</h1>
+<h2>ngIf</h2>
+<div *ngIf="courses.length >0;then courseslist else nocourses">list of courses</div>
+<ng-template #courseslist>list of courses</ng-template>
+<ng-template #nocourses>no courses</ng-template>
+<h3>hide/show on dom</h3>
+{{courses.length}}
+<div [hidden]="courses.length > 0">list of course </div>
+<div [hidden]="courses.length == 0">no courses</div>
+
+<h1>ngSwitch</h1>
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode=='map'">map view</li>
+  <li [class.active]="viewMode=='list'">list view</li>
+</ul>
+<div [ngSwitch]="viewMode">
+<div *ngSwitchCase="'map'">map view content</div>
+<div *ngSwitchCase="'list'">list view content</div>
+<div *ngSwitchDefault>Other wise</div>
+</div>
+
+<h1>ngFor</h1>
+<ul>
+  <li *ngFor="let cl of temp_courses_list;even as iseven"><span [class.active]="iseven"></span>{{i}}  - {{cl.cname}}</li>
+</ul>
